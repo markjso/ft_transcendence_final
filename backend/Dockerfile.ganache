@@ -1,0 +1,9 @@
+FROM node:18
+
+WORKDIR /app
+
+RUN npm install -g ganache-cli
+
+EXPOSE 8545
+CMD ["ganache-cli", "--db", "/data", "-d", "-h", "ganache"]
+

@@ -1,0 +1,56 @@
+.sidebar {
+    background-color: #f8f9fa; /* light background for sidebar */
+    height: 100vh; /* make it full height */
+}
+
+.sidebar a {
+    padding: 10px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #db0f0f; /* hover effect */
+}
+
+.active-link {
+    color: #484242;
+  }
+
+.link-color {
+    color: #bbbbbb; /* Replace with your desired color */
+}  
+
+.chat-room {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    flex: 0 0 auto; /* Fixed height */
+}
+
+.body {
+    flex: 1 1 auto; /* Grow to fill space */
+    overflow: hidden;
+}
+
+.message-card {
+    height: 100%; /*Make card take full height of the body */
+    overflow-y: auto; /* Allow scrolling */
+}
+
+.messages {
+    overflow-y: auto; /* Allow scrolling */
+    padding: 10px;
+}
+
+.input-area {
+    flex: 0 0 auto; /* Fixed height */
+}
+
+.input-height {
+  height: 50px;
+}

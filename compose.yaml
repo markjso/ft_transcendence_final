@@ -1,0 +1,109 @@
+services:
+  # Frontend
+  vite:
+    container_name: vite
+    build: frontend
+    env_file:
+      - ./.env.dev
+    ports:
+      - 5173
+    develop:
+      watch:
+        - action: sync
+          path: frontend
+          target: /usr/src/app
+    networks:
+      - transcendence
+
+  # Backend
+  django:
+    container_name: django
+    build: backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - postgres
+      - redis
+      - ganache
+    develop:
+      watch:
+        - action: sync
+          path: backend
+          target: /usr/src/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - media-data:/vol/media
+      - static-data:/vol/static
+      - contract_data:/usr/src/app/dapp_storage/json
+    networks:
+      - transcendence
+
+  # Nginx
+  nginx:
+    container_name: nginx
+    volumes:
+      - static-data:/vol/static
+      - media-data:/vol/media
+    build: ./nginx
+    ports:
+      # - 80:80
+      - 443:443
+    depends_on:
+      - django
+      - vite
+    restart: always 
+    networks:
+      - transcendence
+
+  # PostgreSQL
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5432
+    restart: on-failure
+    environment:
+      POSTGRES_DB: postgres_db
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: postgres_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - transcendence
+
+  # Redis
+  redis:
+    image: "redis:7"
+    container_name: redis
+    ports:
+      - 6379
+    networks:
+      - transcendence
+
+  # Ganache
+  ganache:
+    container_name: ganache
+    build:
+      context: backend
+      dockerfile: Dockerfile.ganache
+    ports:
+      - 8545
+    volumes:
+      - ganache_data:/data
+    networks:
+      - transcendence
+
+volumes:
+  postgres_data:
+  media-data:
+  static-data:
+  ganache_data:
+  contract_data:
+
+networks:
+  transcendence:
+    name: transcendence

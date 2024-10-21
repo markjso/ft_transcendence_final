@@ -1,0 +1,7 @@
+// custom.scss
+
+// Override Bootstrap variables before importing Bootstrap
+$custom-dark: #1e1d1d; // Custom color
+$custom-primary: #1e1d1d; // Custom color
+// Import Bootstrap's SCSS
+@import "bootstrap/scss/bootstrap";
