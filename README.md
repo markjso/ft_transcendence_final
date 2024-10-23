@@ -2,6 +2,13 @@
 <h2>Overview</h2>
 ft_transcendence is the final project of the 42 Common Core program, developed by our team. It is a single-page web application featuring an online real-time Pong game, tournaments, chat functionality, user account management, and player statistics. The project utilizes Django for the backend, Postgresql for the database and the Bootstrap library with React for the frontend.
 
+<h2>Project Team</h2>
+<ul>Jo Marks @markjso</ul>
+<ul>Jaejun Shin @jaejunshin96</ul>
+<ul>Mehdi Merzaie @mehdiMerzaie2</ul>
+<ul>Isaac Vanderwal @vanderhammer91</ul>
+<ul>Louis Xu @louissxu</ul>
+
 <h2>Features</h2>
 <h3>1. Pong Game</h3>
 Players can engage in a responsive, real-time Pong game. The game uses server-client communication for real-time interactivity.
