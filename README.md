@@ -19,8 +19,8 @@ User Creation & Authentication: Players can register for an account using 2FA or
 Tournament scores are stored securely on a blockchain via Solidity Smart Contracts.
 
 <h2>Technologies Used</h2>
-Backend: Django (Python)
-Frontend: React/Bootstrap
-Database: PostgreSQL
-Real-time Communication: Django Channels and WebSockets for real-time gameplay and chat
-Deployment: Docker Compose
+<li>Backend: Django (Python)</li>
+<li>Frontend: React/Bootstrap</li>
+<li>Database: PostgreSQL</li>
+<li>Real-time Communication: Django Channels and WebSockets for real-time gameplay and chat</li>
+<li>Deployment: Docker Compose</li>
