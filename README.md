@@ -7,7 +7,7 @@ ft_transcendence is the final project of the 42 Common Core program, developed b
 Players can engage in a responsive, real-time Pong game. The game uses server-client communication for real-time interactivity.
 
 <h3>2. Tournament System</h3>
-A tournament mode where multiple users (2,4,8, or 16) can join and are then matched, adding a competitive aspect to the game. The tournament system announces which users are expected for the next game.
+A tournament mode where multiple users (2, 4, 8, or 16) can join and are then matched, adding a competitive aspect to the game. The tournament system announces which users are expected for the next game.
 
 <h3>3. Live Chat Feature</h3>
 A live chat system is integrated to allow players to communicate with each other via group chats and direct messages. Users have the ability to block other users, access player profiles and  invite other users to a game.
