@@ -50,11 +50,11 @@ export const styles = {
     width: '100%',
     height: 'auto'
   },
-  infoContainer: {
-    position: 'relative',
-    width: '100%',
-    height: 'auto'
-  },
+  // infoContainer: {
+  //   position: 'relative',
+  //   width: '100%',
+  //   height: 'auto'
+  // },
   leftImage: {
     width: '100%',
     height: 'auto'

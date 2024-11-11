@@ -34,7 +34,7 @@ const MatchInstance: React.FC = () => {
   if (!matchDetails) return <p style={{ color: 'white' }}>No match details found.</p>;
 
   return (
-    <div className='h-80'>
+    <div className='h-100'>
       {matchDetails.player1 && matchDetails.player2 ? (
         <TourneyMatch
           matchDetails={matchDetails}

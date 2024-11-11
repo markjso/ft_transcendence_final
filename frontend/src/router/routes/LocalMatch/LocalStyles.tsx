@@ -1,5 +1,3 @@
-
-
 export const styles = {
   middleLine: {
     position: 'absolute',

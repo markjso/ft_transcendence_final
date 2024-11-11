@@ -152,7 +152,9 @@ const TourneyMatch: React.FC<TourneyMatchProps> = ({ matchDetails }) => {
         } else if (data.type === "state_update") {
           setP1Connected(data.p1_is_connected);
           setP2Connected(data.p2_is_connected);
+          console.log("Connected players:", data.playerNames);
         } else if (data.type === "game_spectator_sync") {
+          console.log("SPECTATOR SYNC: RECEIVED:" + data.roomState);
           if (data.roomState === "MENU") {
             setOverlayMessage("!");
             setRoomState("1");
@@ -257,7 +259,7 @@ const TourneyMatch: React.FC<TourneyMatchProps> = ({ matchDetails }) => {
       {alertMessage && <Alert color={alertColor}>{alertMessage}</Alert>}
 
       {roomState === "1" && (
-        <>
+        <Container className="h-100 overflow-auto">
           <div className="imageContainer">
             {winner === "TBD" ? (
               <Button color="info" className="absoluteButton" onClick={handleStartButton}>
@@ -270,20 +272,24 @@ const TourneyMatch: React.FC<TourneyMatchProps> = ({ matchDetails }) => {
             )}
             <p style={{ position: "absolute", alignItems: "center", color: "yellow", top: "95%" }}>
                   <strong>
-                    FIXTURE: {matchDetails.player1?.nickname}(
-                    <span style={{ color: p1Connected ? "green" : "red" }}>
-                      {p1Connected ? "Connected" : "Not Connected"}
-                    </span>
-                    ) VS. {matchDetails.player2?.nickname}(
-                    <span style={{ color: p2Connected ? "green" : "red" }}>
-                      {p2Connected ? "Connected" : "Not Connected"}
-                    </span>
-                    )
+                    FIXTURE: {matchDetails.player1?.nickname} VS. {matchDetails.player2?.nickname}
                   </strong>
                 </p>
             <img src="/TourneyMenu.png" alt="Squirtle playing table tennis" className="leftImage" />
           </div>
-          </>
+          <Card className="bg-black">
+            <CardBody className="text-light">
+              <CardTitle>Pong Rules:</CardTitle>
+              <CardText>
+                The first player to 11 points, or with the most points when the time runs out wins!
+                <br />
+                As this is a tournament game, the game will reset in the case of a draw! THERE MUST BE A WINNER! <br />
+                Both player controls: W (up), S (down).
+                <br />
+              </CardText>
+            </CardBody>
+          </Card>
+        </Container>
       )}
 
       {roomState === "2" && (
@@ -303,20 +309,6 @@ const TourneyMatch: React.FC<TourneyMatchProps> = ({ matchDetails }) => {
           <Timer minutes={minutes} seconds={seconds} />
         </div>
       )}
-
-       <Card className="bg-black">
-            <CardBody className="text-light">
-              <CardTitle>Pong Rules:</CardTitle>
-              <CardText>
-                The first player to 11 points, or with the most points when the time runs out wins!
-                <br />
-                As this is a tournament game, the game will reset in the case of a draw! THERE MUST BE A WINNER! <br />
-                Both player controls: W (up), S (down).
-                <br />
-              </CardText>
-            </CardBody>
-          </Card>
-        {/* </Container> */}
     </>
   );
 };
