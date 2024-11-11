@@ -34,3 +34,7 @@ Tournament scores are stored securely on a blockchain via Solidity Smart Contrac
 * ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
 * ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 * ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+## Screenshots
+https://github.com/user-attachments/assets/148d5c34-7c5e-4264-8882-4cd360622a0e
+
